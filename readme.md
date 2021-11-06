@@ -73,8 +73,49 @@
             in_order_traverse(tree.right)
     ```
     * Iterative traversal---DFS
-    
+    ```python
+    def dfs(tree):
+        # handle the edge case when tree is None
+        if tree == None:
+            return
+        # we need a stack to realize the DFS order
+        node_stack = []
+        # add the current node the stack (end of the list)
+        node_stack.append(tree)
+
+        while len(node_stack) !=0 :
+            # pop out the tail node from the stack (list)
+            cur_node = node_stack.pop()
+            print(cur_node.value)
+            if cur_node.left != None:
+                node_stack.append(cur_node.left)
+            if cur_node.right != None:
+                node_stack.append(cur_node.right)
+
+    ```
     * Iterative traversal---BFS
+    ```python
+    def dfs(tree):
+        # here, we use a queue, rather than a stack to realize the order of BFS
+        # handle the edge case when tree is None
+        if tree == None:
+            return
+        # we need a stack to realize the DFS order
+        node_queue = []
+        # add the current node the stack (end of the list)
+        node_queue.append(tree)
+
+        while len(node_stack) !=0 :
+            # pop out the tail node from the stack (list)
+            cur_node = node_queue.pop(0)
+            print(cur_node.value)
+            if cur_node.left != None:
+                node_queue.append(cur_node.left)
+            if cur_node.right != None:
+                node_queue.append(cur_node.right)
+
+
+## In a BST, Find the shortest path from Node A to Node B
 
 ## For a recursive method, when you need to return??
 * If you only need to take some action, like print out a value, or replace a value, you do not need to return
