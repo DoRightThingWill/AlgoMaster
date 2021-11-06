@@ -100,13 +100,13 @@
         # handle the edge case when tree is None
         if tree == None:
             return
-        # we need a stack to realize the DFS order
+        # we need a queue to realize the BFS order
         node_queue = []
-        # add the current node the stack (end of the list)
+        # add the current node the queue (end of the list)
         node_queue.append(tree)
 
         while len(node_stack) !=0 :
-            # pop out the tail node from the stack (list)
+            # pop out the head node from the queue (list)
             cur_node = node_queue.pop(0)
             print(cur_node.value)
             if cur_node.left != None:
@@ -116,6 +116,61 @@
 
 
 ## In a BST, Find the shortest path from Node A to Node B
+
+* Given a root node, and target node, write a method return the path from the root node to the target node. This method could be built based on the search method.
+
+    * path--> recursive
+    ```python
+
+    def path(tree, target):
+ 
+        path = []
+        return path_helper(tree, target, path)
+
+
+    def path_helper(tree, target, path):
+        # the input tree is None
+        # means we are at the tree END and we did not find the target
+        if tree == None:
+            return None
+        
+        # if we find the target
+        if tree.value == target:
+            return path
+        
+        # if the current node is the target, we add this node to path
+        path.append(tree)
+
+        # then we move down to the child tree
+        if target >= tree.value:
+            return search(tree.right, target)
+        else:
+            return search(tree.left, target)
+
+
+    ```
+    * path--> iteration
+    ```python
+    def search(tree, target):
+
+        path = []
+
+        while tree != None:
+            if tree.value == target:
+                return path
+            elif target >= tree.value:
+                tree = tree.right
+                path.append(tree)
+            else:
+                tree = tree.left
+                path.append(tree)
+        return None
+    ```
+
+    * Path problem is the variant of Searching problem
+    * For iterative traversal, the stack is used to realize the order of the DFS. 
+    * DFS-traversal, stack yes. Tree searching, stack No. Tree path, a list or stack is used for temporary storage of the visited node in the path.
+
 
 ## For a recursive method, when you need to return??
 * If you only need to take some action, like print out a value, or replace a value, you do not need to return
