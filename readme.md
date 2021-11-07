@@ -201,3 +201,25 @@ while x < y:
         continue
     counter += 1
  ```
+
+## Time and Space complexity of recursion
+* Code sample
+```python
+def recursion(a):
+    # do something here
+    x + y 
+
+    recursion(a.left)
+    recursion(a.right)
+    # as we could see, the recursion goes as a depth first search way
+    # so maximum maintain a "path" or "height" amount of calls using a stack
+    #                    1
+    #                 /     \
+    #               2         3
+    #              /            \
+    #             4               5
+    # however, through this kind of scanning, it visits all nodes in the tree, one by one
+    # thus, the running time is O(n), where n is the qty of nodes in the tree
+    # space complexity if O(h), where h is the height of the tree, since it only needs to maintain a stack of length of the tree height
+    # for a dfs, or a recursion, it CAN NOT visit multiple nodes at the same time. Thus, the running time can not be less than O(n)
+```
