@@ -3,6 +3,8 @@
 ## For a BST, search v.s. traversal
 * Traversal means you need to get ALL nodes of the tree.
 * To find a value, though it looks like you are Traversing, you do not have to. You just need to choose to go left or right, by comparing the target value and the value of current node. Through this choosing, you skip LOTS OF nodes. 
+* Considering the relationships of node, and child nodes in a BST, you either go left or right to search a target. Such searching in a BST does not need to cover ALL nodes. HOWEVER, for a general binary tree, no fixed comparison relationship between parent and children, to search a target, we need to go BOTH left and right, thus traversing all nodes is necessary.
+* Overall, for a BST, you may not need trverall all nodes at all.
 * The implementation is different as well
     * For traversal, as long as the left or right child node is not null or none, you could visit the corresponding subtree. Code looks like 
     ```python
@@ -177,3 +179,25 @@
 * If you need the result from the sub-problem (next level recursion) to solve the upper level problem, you need a return.
 * Most of the cases,  you need a return.
 
+## Swap Items in a list
+```python
+# Generally, the syntax of python is simpler than Java
+# in Python, code for switching items is pretty simple
+list[start], list[end] = list[end], list[start]
+# while in java, you need a temp item to store one item as a media
+```
+ ## for or while loop, you can avoid continue by ..
+ ```python
+while x < y:
+    if a < b:
+        counter = 0
+    counter +=1
+ 
+# code above is equivalent to 
+
+while x < y:
+    if a< b:
+        counter = 1
+        continue
+    counter += 1
+ ```
