@@ -223,3 +223,26 @@ def recursion(a):
     # space complexity if O(h), where h is the height of the tree, since it only needs to maintain a stack of length of the tree height
     # for a dfs, or a recursion, it CAN NOT visit multiple nodes at the same time. Thus, the running time can not be less than O(n)
 ```
+
+## Binary tree height
+```python
+def get_height(tree):
+    if tree == None:
+        return 0
+    height =1+  max (get_height(tree.left), get_height(tree.right))
+
+    return height
+# for a single node, the height is ??? 1
+# a none node, height is 0
+# height is equal to path??? think about it
+
+```
+## for loop range in python
+```python
+# range(len(subset)) will not change once first initiated
+# even though subset append items in following iterations
+for idx in range(len(subset)):
+    subset.append("i")
+
+
+```
