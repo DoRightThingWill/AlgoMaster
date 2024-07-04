@@ -36,3 +36,4 @@ def get_min_number(num: str, k: int) -> str:
 
 num = "1432219"
 get_min_number(num, 3)
+# test
