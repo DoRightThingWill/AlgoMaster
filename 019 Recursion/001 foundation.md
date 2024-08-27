@@ -1,0 +1,4 @@
+- what are stored in memory stack and heap
+  - stack: small, like 电脑桌面，存放 method stack，函数调用栈，object 引用，primitive value 等等。一般很小，就是 MB 级别
+  - heap: large, like disk，new 出来的 ojbect，
+  - c++中，数组，存在了 stack 中，所以，如果是大数组，容易 stack overflow
